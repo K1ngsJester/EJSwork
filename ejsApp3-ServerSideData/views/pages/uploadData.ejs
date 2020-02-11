@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+<main>
+  <div class="jumbotron">
+      <h2>Here are your movies <br> After you inputed some movies, check out the "about" page!</h2>
+      <div id="demo"></div>
+
+     
+
+     
+      </br>
+      <label for="movie">Good Movies</label>
+      <input class="form-control" type="text" id="movie" name="movie"><br>
+      <button class="btn btn-primary  " id="BTN">Add another movie </button>
+
+  </div>
+</main>
+
+<footer>
+  <% include ../partials/footer %>
+</footer>
+<script type="text/javascript">
+// our menu calls this page URL with no ?id= value,
+// so code needs to check for that
+// when user enters data, I append the data using the required ?id=
+  document.getElementById("BTN").addEventListener("click", loadDoc);
+  let movies = [];
+  if(sessionStorage.getItem("list") !== undefined){
+    document.getElementById("demo").innerHTML = sessionStorage.getItem("list");
+  }
+
+  function loadDoc() {
+    let xhttp, xmlDoc, txt, x, i;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if(this.readyState == 4 && this.status ==200) {
+        xmlDoc = this.responseXML;
+        txt =  document.getElementById("demo").innerHTML;
+        x = document.getElementById("movie").value;
+        movies.push(x);
+        txt = txt + movies[movies.length - 1] + "<br>";
+        setData(txt);
+        document.getElementById("demo").innerHTML = txt;
+      }
+    };
+    xhttp.open("GET", "http://localhost:3000/uploadData", true);
+    xhttp.send();
+}
+
+function setData(x){
+  sessionStorage.setItem("list", x);
+}
+</script>
+
+</body>
+</html>
