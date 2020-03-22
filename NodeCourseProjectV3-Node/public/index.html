@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Motorcycle shop</title>
+    <!-- <documentation at http://demos.jquerymobile.com/1.4.1/ > -->
+  
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="javascripts/index.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Start of Home page -->
+    <div data-role="page"  id="home">
+            <!--  login page header -->
+            <div data-role="header" data-theme='b'>
+               <!-- helpful location   -->
+              <!-- https://demos.jquerymobile.com/1.2.0/docs/toolbars/docs-navbar.html -->
+
+                <h1>Devon's Motorcycles!</h1>
+                <div data-role="navbar"  data-theme='c'>
+                    <ul>
+                        <li><a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-carat-r" href="#home">home</a></li>
+                        <li><a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-carat-r" href="#page1">Create Account</a></li>
+                        <li><a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-carat-r" href="#page2">Motorcycle Selection</a></li>
+                        <li><a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-carat-r" href="#page3">Add Money</a></li>
+                    </ul>
+                  </div><!-- /navbar -->
+               
+            </div>
+            <!--  login page content -->
+            <div data-role="content" data-theme='e'>
+               <h2>The best site to purchase your dream motorcycle</h2>
+                <p> Home page will have general information as to what each page is for. <br />
+                    Create Account page will have previous users' to log into or create your own user along with how much money they can spend <br />
+                    Motorcycle Selection page will have motorcycles to purchase with a button that will send the user to the last page and deduct money as they purchase a motorcycle <br />
+                    Last page will be a reciept page but also be able to add money to the users' account
+                </p>
+                <img id="test">
+            </div>
+              
+            <!--  login page footer -->
+            <div data-role="footer" data-theme='b'>
+                    <h1>Copyrigtht 2020 by Devon Rice</h1>
+            </div>
+    </div>
+
+
+        <div data-role="page"  id="page1">
+            <!--  page1 page header -->
+            <div data-role="header" data-theme='b'>
+                <h1>Devon's Motorcycles!</h1>
+              <div data-role="navbar"  data-theme='c'>
+                  <ul>
+                      <li><a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-carat-r" href="#home">home</a></li>
+                      <li><a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-carat-r" href="#page1">Create Account</a></li>
+                      <li><a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-carat-r" href="#page2">Motorcycle Selection</a></li>
+                      <li><a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-carat-r" href="#page3">Add Money</a></li>
+                  </ul>
+                </div><!-- /navbar -->
+          </div>
+            <!-- t page content -->
+            <div data-role="content" data-theme='e'>
+                <div>Please click on a name or create your own profile:</div>
+                <div id="PlayerList"></div>
+                Enter your name: <br />
+                <input type="text" value="" id="name" />
+                Enter how much money you have: <br />
+                <input type="number" value="" id="money" />
+                Enter your address: <br />
+                <input type="text" value="" id="address" />
+                <input type="button" value="Click To Create Account" id="createUser" />
+                <!-- clear player info--><input type="button" value="Clear Data" id="buttonClear" data-inline="true" />
+
+                <br />
+                Delete user by name here:
+                <input type="text" value="" id="deletePlayer" data-inline="true" />
+                <input type="button" value="Delete user by name" id="buttonDelete" data-inline="true" />
+
+            </div>
+              
+            <!--  newaccount page footer -->
+            <div data-role="footer" data-theme='b'>
+                <h1>Copyrigtht 2020 by Devon Rice</h1>
+            </div>
+        </div>
+
+
+
+    <!-- Start of gamelost page -->
+    <div data-role="page"  id="page2">
+            <!--  gamelost page header -->
+            <div data-role="header" data-theme='b'>
+                <h1>Devon's Motorcycles!</h1>
+              <div data-role="navbar"  data-theme='c'>
+                  <ul>
+                      <li><a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-carat-r" href="#home">home</a></li>
+                      <li><a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-carat-r" href="#page1">Create Account</a></li>
+                      <li><a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-carat-r" href="#page2">Motorcycle Selection</a></li>
+                      <li><a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-carat-r" href="#page3">Add Money</a></li>
+                  </ul>
+                </div><!-- /navbar -->
+          </div>
+            <!--  gamelost page content -->
+            <div data-role="content" data-theme='e'>
+                <p>Below is your money!</p>
+                <p id="IDparmHere">Log in to see your current amount of money</p>  <!-- hidden    a place to stash the user ID -->
+                <p>Browse our selection of Motorcycles</p>
+                <div id="selection"></div>
+                <input type="button" value="Sort By Price high to low" id="buttonSortHigh" data-inline="true" />
+                <input type="button" value="Sort By Price low to high" id="buttonSortLow" data-inline="true" />
+
+            </div>
+              
+            <!--  gamelost page footer -->
+            <div data-role="footer" data-theme='b'>
+                <h1>Copyrigtht 2020 by Devon Rice</h1>
+            </div>
+    </div>
+
+    <!-- Start of gamewon page -->
+    <div data-role="page"  id="page3">
+            <!--  gamewon page header -->
+            <div data-role="header" data-theme='b'>
+                <h1>Devon's Motorcycles!</h1>
+              <div data-role="navbar"  data-theme='c'>
+                  <ul>
+                      <li><a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-carat-r" href="#home">home</a></li>
+                      <li><a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-carat-r" href="#page1">Create Account</a></li>
+                      <li><a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-carat-r" href="#page2">Motorcycle Selection</a></li>
+                      <li><a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-carat-r" href="#page3">Add Money</a></li>
+                  </ul>
+                </div><!-- /navbar -->
+          </div>
+            <!--  gamewon page content -->
+            <div data-role="content" data-theme='e'>
+                <p id="IDparm">how much money you have after sales</p>  <!-- hidden    a place to stash the user ID -->
+                <div id="location"></div>
+                <br />
+                <br />
+                <p>Send money to your store credit card here</p>
+                <input type="number" value="" id="addMoney" />
+                <input type="button" value="Add money to account" id="buttonAddMoney" />
+
+
+            </div>
+              
+            <!--  gamewon page footer -->
+            <div data-role="footer" data-theme='b'>
+                <h1>Copyrigtht 2020 by Devon Rice</h1>
+            </div>
+    </div>
+
+    
+
+</body>
+</html>
